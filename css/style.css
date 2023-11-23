@@ -1,0 +1,96 @@
+section:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+h1 {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    /* 제트는 숫자가 높을수록 젤 위에 */
+    z-index: 999;
+}
+
+.gnb {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    z-index: 999;
+    transform: translate(0, -50%);
+}
+
+.gnb li {
+    position: relative;
+    height: 80px;
+    width: 40px;
+    margin: 2px 0;
+}
+
+.gnb li a {
+    position: absolute;
+    inset: 0 0 0 0;
+    font-size: 0;
+
+}
+
+/* .gnb li a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background: #333;
+    transition: width 0.5s;
+}
+
+.gnb li.on a::after {
+    width: 100%;
+} */
+
+
+.gnb li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 4px;
+    height: 4px;
+    background: #9b9b9b;
+    border-radius: 50%;
+
+}
+
+.gnb li a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-13px, -50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+}
+
+
+.gnb li.on a::after {
+    border: 2px solid #9b9b9b;
+}
+
+.section .box {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 100px;
+    font-weight: 600;
+    transform: translate(0, 100px);
+    opacity: 0;
+}
+
+.section.on .box {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+
+}
